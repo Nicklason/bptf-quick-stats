@@ -1,0 +1,21 @@
+{
+  "name": "bptf-quick-stats",
+  "version": "1.0.0",
+  "description": "A faster way to open stats pages for bptf items",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nicklason/bptf-quick-stats.git"
+  },
+  "author": "Nicklason",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Nicklason/bptf-quick-stats/issues"
+  },
+  "homepage": "https://github.com/Nicklason/bptf-quick-stats#readme",
+  "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-config-google": "^0.12.0"
+  },
+  "private": true
+}
