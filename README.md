@@ -10,7 +10,7 @@ A faster way to open stats pages for bptf items
 ## Installation
 
 1. Ensure that you have either Tampermonkey or Greasemonkey installed.
-2. Download the script [`scanner.user.js`](https://github.com/Nicklason/bptf-quick-stats/blob/master/stats.user.js?raw=true).
+2. Download the script [`stats.user.js`](https://github.com/Nicklason/bptf-quick-stats/blob/master/stats.user.js?raw=true).
 3. Allow popup windows from backpack.tf.
 4. The script should now be installed and ready to use.
 
