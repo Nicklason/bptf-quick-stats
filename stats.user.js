@@ -1,13 +1,15 @@
 // ==UserScript==
 // @name         BackpackTF Quick Stats
 // @namespace    https://www.youtube.com/watch?v=dQw4w9WgXcQ
-// @version      1.0.0
+// @version      1.1.0
 // @description  A faster way to open stats pages for bptf items
 // @author       Nicklason
 // @match        https://backpack.tf/profiles/*
-// @grant        none
+// @grant        GM_openInTab
 // @require      http://code.jquery.com/jquery-3.3.1.min.js
 // ==/UserScript==
+
+/* global GM_openInTab */
 
 const $ = window.jQuery;
 
@@ -42,12 +44,9 @@ function inventoryLoaded () {
     $('.item').not('.spacer').on('mouseover', function () {
         const self = this;
         $(document).bind('keydown', function (e) {
-            event.preventDefault();
-            event.stopPropagation();
-
             if (e.which == 16) {
                 const url = constructLink($(self));
-                window.open(url, '_blank');
+                GM_openInTab(url, { insert: true });
             }
         });
     }).on('mouseout', function () {

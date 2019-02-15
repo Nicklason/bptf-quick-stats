@@ -1,6 +1,6 @@
 {
   "name": "bptf-quick-stats",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A faster way to open stats pages for bptf items",
   "main": "index.js",
   "repository": {
