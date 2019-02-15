@@ -1,6 +1,6 @@
 {
   "name": "bptf-quick-stats",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A faster way to open stats pages for bptf items",
   "main": "index.js",
   "repository": {
@@ -14,7 +14,7 @@
   },
   "homepage": "https://github.com/Nicklason/bptf-quick-stats#readme",
   "devDependencies": {
-    "eslint": "^5.13.0",
+    "eslint": "^5.14.0",
     "eslint-config-google": "^0.12.0"
   },
   "private": true

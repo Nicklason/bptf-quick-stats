@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BackpackTF Quick Stats
 // @namespace    https://www.youtube.com/watch?v=dQw4w9WgXcQ
-// @version      1.1.0
+// @version      1.1.1
 // @description  A faster way to open stats pages for bptf items
 // @author       Nicklason
 // @match        https://backpack.tf/profiles/*
@@ -55,12 +55,31 @@ function inventoryLoaded () {
 }
 
 function constructLink (element) {
-    const name = element.data('name');
+    const baseName = element.data('base_name');
     const quality = element.data('q_name');
     const craftable = element.data('craftable') == 1;
     const tradeable = element.data('tradable') == 1;
     const effect = element.data('effect_id') ? element.data('effect_id') : null;
+    const killstreak = parseInt(element.data('ks_tier')) || 0;
+    const australium = element.data('australium') == 1;
+
+    let name = '';
+    if (quality === 'Unusual' || quality === 'Decorated Weapon') {
+        name = element.data('name').replace(element.data('effect_name'), '').trim();
+    } else {
+        if (killstreak !== 0) {
+            name += ['', 'Killstreak ', 'Specialized Killstreak ', 'Professional Killstreak '][killstreak];
+        }
+        if (australium) {
+            name += 'Australium ';
+        }
+
+        name += baseName;
+    }
 
     const url = `https://backpack.tf/stats/${quality}/${name}/${tradeable ? 'Tradeable' : 'Non-Tradable'}/${craftable ? 'Craftable' : 'Non-Craftable'}${effect === null ? '' : `/${effect}`}`;
+    /* eslint-disable-next-line no-console */
+    console.log(url);
+
     return url;
 }
